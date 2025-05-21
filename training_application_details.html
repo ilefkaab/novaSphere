@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>training application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <section class="background-section">
+        </section>
+    </header>
+<div id="training-details"></div>
+<button id="accept">Accepter</button>
+<button id="reject">Refuser</button>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const appId = params.get("app_id");
+const userId = params.get("user_id");
+
+document.getElementById("accept").onclick = () => {
+  fetch('../Backend/update_training_application_status.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ app_id: appId, user_id: userId, action: 'accept' })
+  }).then(() => alert("Candidature à la formation acceptée"));
+};
+
+document.getElementById("reject").onclick = () => {
+  fetch('../Backend/update_training_application_status.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ app_id: appId, user_id: userId, action: 'reject' })
+  }).then(() => alert("Candidature refusée"));
+};
+</script>
+</body>
+</html>

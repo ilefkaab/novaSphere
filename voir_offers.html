@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos offres</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <section class="background-section">
+        </section>
+    </header>
+    <nav>
+       <a href="employeeDashbord.html">Accueil</a>
+        <a href="profile.html">Profil</a>
+        <a href="voir_trainings.html">Formations</a>
+        <a href="leave_credit.html">Congés</a>
+        <a href="contact.html">Contact</a>
+        <a href="logout.html">logout</a>
+    </nav>
+    <h1>Nos Offres</h1>
+    <div class="containers" id="offers-container">Chargement...</div>
+
+    <footer>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/ilef_kb?igsh=eTdsNHF3bjZsYzBo" title="Instagram" target="_blank">📸</a>
+                <a href="https://www.facebook.com/profile.php?id=61571533354295" title="Facebook" target="_blank">📘</a>
+                <a href="https://www.linkedin.com/in/nour-ben-dlella-386777226?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" title="LinkedIn" target="_blank">🔗</a>
+            </div>
+            <p>&copy; 2025 NovaSphere. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+    fetch('../Backend/getOffers.php')
+        .then(res => res.json())
+        .then(data => {
+            const container = document.getElementById('offers-container');
+            container.innerHTML = '';
+
+            data.forEach(offer => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <img src="${offer.image_url}" alt="offre">
+                    <h3>${offer.title}</h3>
+                `;
+                card.onclick = () => {
+                    window.location.href = `detail_offer.html?id=${offer.id}`;
+                };
+                container.appendChild(card);
+            });
+        })
+        .catch(err => {
+            console.error(err);
+            document.getElementById('offers-container').innerText = "Erreur de chargement.";
+        });
+    </script>
+</body>
+</html>

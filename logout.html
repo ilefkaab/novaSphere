@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>logout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+        <section class="background-section">
+        </section>
+    </header>
+  <script>
+    function logout() {
+      if (confirm("Êtes-vous sûr de vouloir vous déconnecter ?")) {
+        // Nettoyer les données du navigateur
+        localStorage.clear();
+
+        // Redirection vers logout.php pour supprimer la session
+        window.location.href = "../Backend/logout.php";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Vous êtes connecté</h2>
+  <button onclick="logout()">Se déconnecter</button>
+</body>
+</html>
