@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Formations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <section class="background-section">
+        </section>
+    </header>
+    <nav>
+       <a href="employeeDashbord.html">Accueil</a>
+        <a href="profile.html">Profil</a>
+        <a href="voir_trainings.html">Formations</a>
+        <a href="leave_credit.html">Congés</a>
+        <a href="contact.html">Contact</a>
+        <a href="logout.html">logout</a>
+    </nav>
+    <h1>Nos formations </h1>
+    <div class="containers" id="trainings-container">Chargement...</div>
+     <footer>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/ilef_kb?igsh=eTdsNHF3bjZsYzBo" title="Instagram" target="_blank">📸</a>
+                <a href="https://www.facebook.com/profile.php?id=61571533354295" title="Facebook" target="_blank">📘</a>
+                <a href="https://www.linkedin.com/in/nour-ben-dlella-386777226?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" title="LinkedIn" target="_blank">🔗</a>
+            </div>
+            <p>&copy; 2025 NovaSphere. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+    fetch('../Backend/get_trainings.php')
+        .then(res => res.json())
+        .then(data => {
+            const container = document.getElementById('trainings-container');
+            container.innerHTML = '';
+
+            data.forEach(training => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <img src="${training.image_url}" alt="training">
+                    <h3>${training.title}</h3>
+                `;
+                card.onclick = () => {
+                    window.location.href = `training_details.html?id=${training.id}`;
+                };
+                container.appendChild(card);
+            });
+        })
+        .catch(err => {
+            console.error(err);
+            document.getElementById('trainings-container').innerText = "Erreur de chargement.";
+        });
+    </script>
+</body>
+</html>

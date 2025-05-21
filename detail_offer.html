@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détail de l'offre</title>
+</head>
+<body>
+    <div id="offer-detail">Chargement...</div>
+
+    <script>
+    const params = new URLSearchParams(window.location.search);
+    const offerId = params.get('id');
+
+    fetch(`../Backend/getOfferByID.php?id=${offerId}`)
+        .then(res => res.json())
+        .then(data => {
+            const container = document.getElementById('offer-detail');
+            container.innerHTML = `
+                <h2>${data.title}</h2>
+                <img src="${data.image_url}" alt="" style="width:300px;height:auto;"><br>
+                <p>${data.description}</p>
+                <small>Publiée le ${new Date(data.created_at).toLocaleDateString()}</small><br><br>
+                <button onclick="window.location.href='postuler.html?id=${data.id}'">Postuler</button>
+            `;
+        })
+        .catch(err => {
+            console.error(err);
+            document.getElementById('offer-detail').innerText = "Erreur de chargement.";
+        });
+    </script>
+</body>
+</html>

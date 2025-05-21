@@ -1,0 +1,638 @@
+/* Définition des variables de couleur */
+:root {
+  --color-primary: #E7D4B5;
+  --color-secondary: #5d536b;
+  --color-background: #fefaf6;
+  --color-text: #000000;
+  --color-hover: #605544;
+  --color-active: #dfd9cf;
+  --color-container-bg: rgb(234, 227, 227);
+  --color-container-shadow: rgba(0, 0, 0, 0.15);
+  --form-group-margin-bottom: 20px;
+  --input-border-color: #ccc;
+  --input-padding: 10px;
+  --margin-bottom: 30px;
+}
+header h1 {
+  text-align: center; /* pour Centrer le texte  */
+  margin: 0 auto;     /* Enlève les marges  */
+}
+
+/* section pour Navig */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #EAE4DD;
+  padding: 15px 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-secondary);
+  margin: 0 20px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #A0937D;
+}
+/* Vidéo en arrière-plan */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+video {
+  position: absolute;
+  top: 0;/* pour position verticale*/
+  left: 0;/* pour position horizantale*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-text {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(0, 0, 0, 0.903);
+  text-align: center;
+  z-index: 2;/*d'empilement des éléments HTML dans une page web*/
+}
+
+.video-text h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.video-text p {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+/* Section Features */
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
+  background-color: #E5E1DA;
+  gap: 20px;/*entre les element de conteneur est 20*/
+}
+
+.feature {
+  text-align: center;
+  padding: 20px;
+  max-width: 320px;
+  background: #e0edf2;
+  border-radius: 12px;
+  box-shadow: 0 6px 10px var(--color-container-shadow);
+  transition: transform 0.5s ease;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+}
+/* Styles pour les boutons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background-color: var(--color-hover);
+}
+/* Section Values */
+.values {
+  padding: 50px;
+  text-align: center;
+}
+
+.values h2 {
+  color: var(--color-secondary);
+  font-size: 2.4em;
+}
+
+.values p {
+  max-width: 750px;
+  margin: 20px auto 0;
+  font-size: 1.2em;
+}
+
+/* Section les icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+/* style des liens */
+.social-icons a {
+  margin: 0 15px;
+  color: var(--color-secondary);
+  font-size: 1.8em;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--color-primary);
+}
+
+/* Styles pour le conteneur du formulaire de connexion */
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: var(--color-container-bg);
+  border-radius: 12px;
+}
+
+/* Styles pour les groupes de champs dans le formulaire */
+.form-group {
+  margin-bottom: var(--form-group-margin-bottom);
+}
+
+/* Styles pour les champs de saisie */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: var(--input-padding);
+  border: 2px solid var(--input-border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+/* Section Contact , dashboard , Profil et Évaluations*/
+.contact-info ,.dashboard ,.profile-info, .evaluations, .training
+{
+  margin-bottom: var(--margin-bottom);
+}
+.contact-info ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  margin: 10px 0;
+}
+
+h2 {
+  color: var(--color-secondary);
+}
+
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  flex: 1;
+  margin: 0 10px;
+}
+
+.stat-value {
+  font-size: 2em;
+  color: var(--color-primary);
+}
+
+.charts {
+  margin: 20px 0;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chart {
+  flex: 1;
+  margin: 0 5px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.chart-placeholder {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  background-image: url(image/static.jpg);
+}
+/* Section Activités Récentes */
+.recent-activities {
+  margin: 20px 0;
+}
+
+.recent-activities ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recent-activities li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Section Actions Rapides */
+.quick-actions {
+  margin-top: 20px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Section Calendrier */
+.calendar {
+  padding: 20px;
+  background-color: var(--color-container-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px var(--color-container-shadow);
+}
+
+.calendar h2 {
+  font-size: 2.4em;
+  color: var(--color-secondary);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 colonnes pour les jours */
+  gap: 10px;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* Alignement des jours de la semaine */
+  text-align: center;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.calendar-day {
+  text-align: center;
+  padding: 15px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Améliore la visibilité */
+}
+
+.calendar-day:hover {
+  background-color: #eae4dd;
+}
+
+/* Pour une date actuelle (si vous l'avez activée dans votre HTML) */
+.current-date {
+  background-color: var(--color-secondary);
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .calendar-grid {
+    grid-template-columns: repeat(3, 1fr); /* Réduction à 3 colonnes */
+    gap: 5px;
+  }
+}
+
+/* Gestion des Congés */
+.leave-management {
+  background-color: #faf3f3;
+  padding: 30px;
+  margin-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.leave-management h2 {
+  text-align: center;
+  font-size: 2.4em;
+  color: var(--color-secondary);
+  margin-bottom: 20px;
+}
+
+.leave-management form {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 10px var(--color-container-shadow);
+}
+
+.form-group {
+  margin-bottom: var(--form-group-margin-bottom);
+}
+
+label {
+  font-size: 1.2em;
+  color: var(--color-text);
+  display: block;
+}
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--color-hover);
+}
+/* Section Introduction Recrutement */
+.recruitment-intro {
+  padding: 50px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.recruitment-intro h1 {
+  font-size: 2.5em;
+  color: var(--color-secondary);
+}
+
+.recruitment-intro p {
+  font-size: 1.2em;
+  color: var(--color-text);
+  margin-top: 20px;
+}
+
+/* Section Offres d'Emploi */
+.job-listings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: #E5E1DA;
+}
+
+.job {
+  background: #e0edf2;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 6px 10px var(--color-container-shadow);
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.job h3 {
+  color: var(--color-secondary);
+  font-size: 1.8em;
+}
+
+.job p {
+  font-size: 1.2em;
+  margin: 15px 0;
+}
+
+.job .btn {
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.job .btn:hover {
+  background-color: var(--color-hover);
+}
+
+/* Section Pourquoi Rejoindre */
+.recruitment {
+  padding: 50px;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+background-color: #f1f1f1;
+ }
+
+.recruitment h2 {
+  font-size: 2.4em;
+  color: var(--color-secondary);
+}
+
+.recruitment p {
+  font-size: 1.2em;
+  color: #555;
+  max-width: 800px;
+  margin: 20px auto;
+}
+/* Section Postuler */
+.apply {
+  background-color: #f8f8f8;
+  padding: 50px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 6px 10px var(--color-container-shadow);
+  margin-top: 50px;
+  width: 80%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Titre de la section */
+.apply h2 {
+  font-size: 2.5em;
+  color: var(--color-secondary);
+  margin-bottom: 20px;
+}
+
+/* Description */
+.apply p {
+  font-size: 1.2em;
+  color: var(--color-text);
+  margin-bottom: 30px;
+}
+
+/* Formulaire */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Labels */
+label {
+  font-size: 1.2em;
+  color: var(--color-secondary);
+  text-align: left;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Champs de saisie */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: var(--input-padding);
+  border: 2px solid var(--input-border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+/* Texte de la lettre de motivation */
+textarea {
+  resize: vertical;
+}
+
+/* Bouton de soumission */
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--color-hover);
+}
+
+/* Lien Retour */
+.apply p a {
+  text-decoration: none;
+  color: var(--color-secondary);
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+.apply p a:hover {
+  color: var(--color-hover);
+}
+
+/* Image de fond pour la page login */
+.page-login {
+  background-image: url('image/loggin.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/loggin.jpg');
+}
+  /* Image de fond pour la page register */
+.page-register {
+  background-image: url('image/register.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/register.jpg');
+
+}
+.page-employee-management {
+  background-image: url('image/ge-em.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/ge-em.jpg');
+
+}
+.page-profile {
+  background-image: url('image/profilee.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/profilee.jpg');
+}
+.page-training-mang {
+  background-image: url('image/form.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/form.jpg');
+}
+.page-calendar-leave-mang {
+  background-image: url('image/form.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/form.jpg');
+}
+.page-dash {
+  background-image: url('image/sttta.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/sttta.jpg');
+}
+/* Pied de page */
+footer {
+  background-color: #606060;
+  text-align: center;
+  padding: 20px;
+}
+
+.containers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .card:hover {
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        .card img {
+            max-width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+        }

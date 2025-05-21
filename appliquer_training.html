@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Postuler à la formation</title>
+</head>
+<body>
+  <h2>Confirmation d'inscription à la formation</h2>
+  <p>Voulez-vous vraiment vous inscrire à cette formation ?</p>
+
+  <button id="apply-btn">Oui, je postule</button>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const trainingId = params.get("id");
+
+    document.getElementById("apply-btn").onclick = () => {
+      fetch("../Backend/appliquer_training.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `training_id=${trainingId}`
+      })
+      .then(res => res.text())
+      .then(msg => {
+        alert(msg);
+        window.location.href = "employeeDashbord.html"; // ou autre page
+      });
+    };
+  </script>
+</body>
+</html>
